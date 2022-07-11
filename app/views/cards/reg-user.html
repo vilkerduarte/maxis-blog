@@ -1,0 +1,42 @@
+<div class="container dashb-users mt-4 p-2 pt-4 font-10 type_{%tipo%}">
+    <!-- variavel do checkbox do usuario -->
+    <input type="checkbox" hidden id="{%checkbox-usuario%}">
+    <label for="{%checkbox-usuario%}"></label>
+    <div class="row dashb-users__frow border-bottom">
+        <div class="col dashb-user__infowrap">
+            <h3>{{usuarios.fieldName}}</h3>
+            <p>{%nome%}</p>
+        </div>
+        <div class="col dashb-user__infowrap">
+            <h3>{{usuarios.fieldEmail}}</h3>
+            <!-- se email confirmado confirm-email = em-confirmed senão confirm-email = "" -->
+            <p class="m-0 {%confirm-email%} d-flex justify-content-center align-items-center gap-025">
+                {%email%}
+                <i class="far fa-times-circle dashb-emailc em-confirm_no ml-2"></i>
+                <i class="far fa-check-circle dashb-emailc em-confirm_yes ml-2"></i>
+            </p>
+        </div>
+        <div class="col dashb-user__infowrap infowrap_status">
+            <h3>{{usuarios.fieldStatus}}</h3>
+            <p>{%status%}</p>
+        </div>
+        <div class="col-2 dashb-user__infowrap">
+            <h3>{{usuarios.fieldOpts}}</h3>
+            <span class="d-flex gap-05 justify-content-center">
+                <a href="#" onclick="makeAction('bloquear','{%hash%}'); return false;" data-btns-config title="{{usuarios.titleActionBloquear}}"><i class="fas fa-fw fa-user-lock fa-lg"></i></a>
+                <a href="#" onclick="makeAction('excluir','{%hash%}'); return false;" data-btns-config title="{{usuarios.titleActionUnset}}"><i class="fas fa-fw fa-user-times fa-lg"></i></a>
+                <a href="#" onclick="makeAction('alterar-privilegios','{%hash%}'); return false;" data-btns-config title="{{usuarios.titleActionPriv}}"><i class="fas fa-fw fa-user-shield fa-lg"></i></a>
+            </span>
+        </div>
+    </div>
+    <div class="row dashb-users__srow justify-content-beteween gap-2 pt-2">
+        <strong class="col-4">{%admin-label%}</strong>
+        <p class="col-4 m-0">{%hash%}</p>
+        <p class="col-4 m-0">{{usuarios.lbInsc}}</p>
+    </div>
+    <div class="dashb-users__veruser">
+        <a href="#" onclick="page_modal('{{ver-usuario.myLink}}','?ID={%hash%}');return false;">
+            <h3 class="bold"><i class="fas fa-chevron-down"></i> {{usuarios.lbSeeUser}}</h3>
+        </a>
+    </div>
+</div>

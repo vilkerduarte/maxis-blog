@@ -1,0 +1,23 @@
+{
+  "pageTitle":"Impostazioni",
+  "myLink":"/impostazioni",
+  "subtitle1":"Controllo di accesso",
+  "newConfig":"Nuova Configurazione",
+  "configAtual":"Impostazioni Attuali",
+  "accessControl":{
+    "labelLevel":"Livello di accesso",
+    "labelDir":"Directory"
+  },
+  "btnConfig":"Impostare",
+  "languagePackage":{
+    "title":"Pacchetti di Lingue",
+    "labelIdentify":"Identificatore",
+    "labelValue":"Valore"
+  },
+  "btnAdd":"Aggiungere",
+  "languageDir":{
+    "title":"Link Amichevoli Multilingue",
+    "labelLink":"Link <font class=\"font-8\">Ex. &quot;/cruscotto&quot;</font>",
+    "labelInclude":"Includere <font class=\"font-8\">Ex. &quot;dashboard&quot;</font>"
+  }
+}

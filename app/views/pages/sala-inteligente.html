@@ -1,0 +1,267 @@
+<div class="container my-5">
+	<div class="row w-100">
+    	<h1 class="col-12 family-title-master font-28 text-center color_1 mb-5">Bem Vindo(a) à Sala Inteligente</h1>
+        <div class="col-4">&nbsp;</div>
+        <div class="col-4">
+        	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+<div class="calculadora shadow">
+  <div class="calc-selector">
+    <b style="width:100%;display:inline-block; margin-bottom:10px; padding-top:0;">Tipo de Cálculo</b>
+    <input type="radio" id="martingale" name="calc" hidden="" checked>
+    <label for="martingale">Martingale</label>
+    <input type="radio" id="soros" name="calc" hidden="">
+    <label for="soros">Soros</label>
+  </div>
+  <b>Banca</b>
+  <div class="display">$ <font contenteditable="true" id="banca">5000.00</font></div>
+  <b>Percentual de Lucro do Ativo</b>
+  <div class="percentual-do-ativo"><font contenteditable="true" id="percent">72.0</font> %</div>
+  <b>Lucro Esperado</b>
+  <div class="lucro-esperado">$ <font contenteditable="true" id="lucro-esperado">1.00</font></div>
+  <b>Aplicação Atual</b>
+  <div class="bet">$ <font id="bet">---</font></div>
+  <b>Retorno Esperado</b>
+  <div class="retorno">$ <font id="retorno">---</font></div>
+  <div class="btns">
+    <div class="btn">
+      <div class="btn-loss">Loss</div>
+    </div>
+    <div class="btn">
+      <div class="btn-profit">Profit</div>
+    </div>
+  </div>
+  <div class="alerts">&nbsp;</div>
+</div>
+<script>
+
+</script>
+<style>
+  .calculadora{
+    font-family:'KoHo';
+    width:100%;
+    max-width:280px;
+    text-align:center;
+    border:1px solid #cccccc;
+    border-radius:8px;
+    background-color:#fcfcfc;
+    padding:8px;
+    display:flex;
+    flex-direction:column;
+    justify-contents:middle;
+  }
+  .calculadora font[contenteditable=true]{
+    background-color: #ededed;
+    outline:none !important;
+    border-radius:4px;
+    padding:1px 4px;
+    border:1px solid #cccccc00;
+  }
+  .calculadora font[contenteditable=true]:focus{
+    border:1px solid #cccccc;
+  }
+  .calculadora b{
+    color:#666;
+    padding-top:10px;
+  }
+  .calculadora .btns{
+    padding:20px;
+    display:flex;
+    flex-direction:row;
+  }
+
+  .calculadora .btn-loss,
+  .calculadora .btn-profit{
+    display:block;
+    width:100%;
+    height:100%;
+    font-size:18pt;
+    line-height:40pt;
+    cursor:pointer;
+    border-radius:4px;
+  }
+
+  .calculadora .btn{
+    flex:1;
+    padding:4px;
+    color:#fff;
+    opacity:0.7;
+    transition:all 300ms ease-in-out;
+  }
+  .calculadora .btn:hover{
+    opacity:1;
+  }
+  .calculadora .btn-loss{
+    background-color:#8B0000;
+  }
+  .calculadora .btn-profit{
+    background-color:#009933;
+  }
+  .calculadora .calc-selector{
+    border:1px solid #ccc;
+    border-radius:8px;
+    padding:12px 0 20px 0;
+  }
+  .calculadora .calc-selector label{
+    background-color:#000033;
+    color:white;
+    border-radius:4px;
+    margin:2px 4px;
+    padding:1px 9px;
+    box-shadow:0 0 15px 1px #00000000;
+    opacity:0.6;
+    font-weight:bold;
+    cursor:pointer;
+    transition:all 200ms ease-in-out;
+  }
+  .calculadora .calc-selector label:hover{
+    opacity:0.9;
+  }
+  .calculadora .calc-selector input:checked + label{
+    opacity:1;
+    box-shadow:0 0 15px 1px #00000060;
+  }
+  .btn-profit.desabilitado{
+    background:#bdacac !important;
+    opacity:0.9 !important;
+    cursor:not-allowed;
+  }
+  .btn-loss.desabilitado{
+    background:#a4baab !important;
+    opacity:0.9 !important;
+    cursor:not-allowed;
+  }
+  .alertGreen{
+    color:#009933;
+    font-style:italic;
+  }
+  .alertRed{
+    color:#C30000;
+    font-weight:bold;
+  }
+</style>
+        </div>
+        <div class="col-4">&nbsp;</div>
+    </div>
+</div>
+<script>
+var BANCA;
+var PERCENT;
+var apply;
+var profit;
+var retorno;
+var preferer = 0.0;
+var extraVar = 1.03;
+var BLOCKED = false;
+var SOROS = false;
+function checkCalcType(){
+  if(document.getElementById('martingale').checked){
+    SOROS = false;
+  }else{
+    SOROS = true;
+  }
+}
+$('input[type=radio]').change(checkCalcType);
+checkCalcType();
+function fixedTarget(elem,l){
+    if(elem.innerText == ''){
+      elem.innerText = 0;
+    }
+    var num = parseFloat(elem.innerText);
+    elem.innerHTML = num.toFixed(l);
+  }
+  function init(){
+    $('font[contenteditable=true]').each(function(index,elem){
+      $(elem).focusout(function(){
+        if(elem.id == 'percent'){
+          fixedTarget(elem,1);
+        }else{
+          fixedTarget(elem,2);
+          if(elem.id == 'lucro-esperado'){
+            preferer = parseFloat(elem.innerText);
+          }
+        }
+        checkBet();
+      });
+    });
+    $('.btn-profit').click(function(){
+      ganhou();
+    });
+    $('.btn-loss').click(function(){
+      perdeu();
+    });
+
+    checkBet();
+  }
+function checkBet(){
+  BANCA = parseFloat(document.getElementById('banca').innerText);
+  PERCENT = parseFloat(document.getElementById('percent').innerText);
+  profit = parseFloat(document.getElementById('lucro-esperado').innerText);
+
+  var p = PERCENT / 100;
+  apply = profit/p;
+  var bet = document.getElementById('bet');
+  bet.innerText = apply;
+  fixedTarget(bet,2);
+
+  var retornoI = document.getElementById('retorno');
+  retorno = (parseFloat(p)+parseFloat(1)) * parseFloat(apply);
+  retornoI.innerText = retorno;
+  fixedTarget(retornoI,2);
+  checkSaldo();
+}
+function ganhou(){
+  if(BLOCKED){ return;}
+  BANCA += parseFloat(profit);
+  var elBan = document.getElementById('banca');
+  elBan.innerText = BANCA;
+  fixedTarget(elBan,2);
+  var lc = document.getElementById('lucro-esperado');
+  if(SOROS){
+    profit = retorno*(PERCENT/100);
+    console.log(retorno);
+  }else{
+    if(preferer > 0){
+      profit = preferer;
+    }else{
+      profit = 1;
+    }
+  }
+  lc.innerText = profit;
+  fixedTarget(lc,2);
+  checkBet();
+}
+function perdeu(){
+  if(BLOCKED){ return;}
+  BANCA -= parseFloat(apply);
+  BANCA = BANCA.toFixed(2);
+  var elBan = document.getElementById('banca');
+  elBan.innerText = BANCA;
+  fixedTarget(elBan,2);
+  if(!SOROS){
+    profit = parseFloat(profit*extraVar);
+  }
+  profit += parseFloat(apply);
+  profit = profit.toFixed(2);
+  var lc = document.getElementById('lucro-esperado');
+  lc.innerText = profit;
+  fixedTarget(lc,2);
+  checkBet();
+}
+function checkSaldo(){
+  if(apply > BANCA){
+    BLOCKED = true;
+  }else{
+    BLOCKED = false;
+  }
+  if(BLOCKED){
+    $('.btn-loss, .btn-profit').addClass('desabilitado');
+    $('.alerts').html('<div class="alertRed">O valor da Banca é Inferior ao da Aplicação</div>');
+  }else{
+    $('.btn-loss, .btn-profit').removeClass('desabilitado');
+    $('.alertRed').remove();
+  }
+}
+  init();
+checkSaldo();
+</script>

@@ -1,0 +1,11 @@
+<files ~ "^.*\.([Hh][Tt][Aa]|config\.json|sql|DB|ini|git|gitignore|DS_Store|config)">
+order allow,deny
+deny from all
+satisfy all
+</files>
+
+RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]

@@ -1,0 +1,27 @@
+<div class="container py-5">
+	<div class="row w-100">
+        <div class="col-6 justify-content-end d-flex">
+        	<form class="w-100 border-radius-8px formAlt px-1 py-4" action="" method="post">
+            	<h1 class="font-32 mb-4 family-title-master w-100 text-center">{{login.pageTitle}}</h1>
+            	<div class="field">
+                	<input type="email" placeholder=" " name="email_login" required>
+                    <p class="label">{{login.placeholderEmail}}</p>
+                </div>
+                <div class="field">
+                	<input type="password" placeholder=" " name="senha_login" required>
+                    <p class="label">{{login.placeholderSenha}}</p>
+                </div>
+                <a href="{{esqueci-minha-senha.myLink}}" class="link_hover w-100 d-block font-11 mb-3 pl-1">{{login.recoverPass}}</a>
+                <div class="w-100 text-center p-1">
+                	<button>{{login.btnLabel}}</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-6 pt-5 color_2">
+        	<div class="w-100 h-75 d-flex" style="align-items: center;">
+                <!-- <img src="/img/fav.svg" height="50px" style="vertical-align:bottom" class="d-inline-block mr-3"> -->
+                <strong class=" d-inline-block">{{login.askSignUp}}<br><a href="{{cadastro.myLink}}"><font class="font-15">{{login.actionRegister}}</font></a></strong>
+            </div>
+        </div>
+    </div>
+</div>

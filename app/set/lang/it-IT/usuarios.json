@@ -1,0 +1,21 @@
+{
+  "pageTitle":"Utenti",
+  "myLink":"/utenti",
+  "fieldName":"Nome",
+  "fieldEmail":"Email",
+  "fieldStatus":"Stato",
+  "fieldOpts":"Opzioni",
+  "fieldSld":"Bilancia",
+  "fieldType":"Tipo",
+  "fieldHash":"Hash",
+  "fieldNasc":"Data di nascita",
+  "fieldSSN":"SSN",
+  "lbSeeUser":"Visualizza Utente",
+  "lbAdmin":"Amministratore",
+  "lbSingleUser":"Utente Regolare",
+  "titleActionBloquear":"Blocca Utente",
+  "titleActionUnset":"Elimina Utente",
+  "titleActionPriv":"Cambia Privilegi",
+  "lbInsc":"Immatricolato il {%data%}",
+  "button":"Registrati"
+}

@@ -1,0 +1,8 @@
+{
+  "pageTitle":"My Account",
+  "myLink":"/my-account",
+  "messages":{
+    "dadosAlterados":"Successfully changed data!"
+  },
+  "btnLabel":"Modify"
+}

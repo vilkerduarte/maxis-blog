@@ -1,0 +1,49 @@
+<div class="container pt-5">
+	<div class="row">
+    	<h1 class="col-12 mb-2 family-title-master font-34 protege">{{meus-dados.pageTitle}}</h1>
+        <h1 class="col-12 mb-5 family-title-master font-15 protege">{%nome%}</h1>
+        <form class="formAlt w-100 row" action="" method="post">
+        	<div class="col-4">
+            	<div class="field">
+            		<input type="email" id="email" name="email" placeholder=" " value="{%email%}" autocomplete="off">
+                	<p class="label">{{cadastro.email}}</p>
+                </div>
+            </div>
+            <div class="col-4">
+            	<div class="field">
+            		<input type="password" id="senha" name="senha" placeholder=" " autocomplete="off">
+                	<p class="label">{{cadastro.senha}}</p>
+                </div>
+            </div>
+            <div class="col-4">
+            	<div class="field">
+            		<input type="password" id="csenha" name="csenha" placeholder=" " autocomplete="off">
+                	<p class="label">{{cadastro.confirmarSenha}}</p>
+                </div>
+            </div>
+            <div class="col-12 text-center p-3">
+	            <button>{{meus-dados.btnLabel}}</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+<script>
+$('#senha,#csenha').keyup(function(){check__();});
+$('#senha,#csenha').change(function(){check__();});
+$('#senha,#csenha').blur(function(){check__();});
+
+
+function check__(){
+	if($('#senha').val().length > 3){
+		if($('#senha').val() != $('#csenha').val()){
+			$('#senha,#csenha').attr('style','border:1px solid #c30000');
+		}else{
+			$('#senha,#csenha').attr('style','');
+		}
+	}else{
+		$('#senha,#csenha').attr('style','');
+	}
+}
+</script>

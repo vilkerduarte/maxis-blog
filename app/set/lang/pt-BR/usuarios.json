@@ -1,0 +1,21 @@
+{
+  "pageTitle":"Usuários",
+  "myLink":"/usuarios",
+  "fieldName":"Nome",
+  "fieldEmail":"Email",
+  "fieldStatus":"Status",
+  "fieldOpts":"Opções",
+  "fieldSld":"Saldo",
+  "fieldType":"Tipo",
+  "fieldHash":"Hash",
+  "fieldNasc":"Data Nasc.",
+  "fieldSSN":"CPF",
+  "lbSeeUser":"Ver Usuário",
+  "lbAdmin":"Administrador",
+  "lbSingleUser":"Normal",
+  "titleActionBloquear":"Bloquear Usuário",
+  "titleActionUnset":"Excluir Usuário",
+  "titleActionPriv":"Alterar Privilégios",
+  "lbInsc":"Inscrito em {%data:>FILTRO_DATA_FORMAT%}",
+  "button":"Cadastrar"
+}

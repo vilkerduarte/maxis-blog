@@ -1,0 +1,19 @@
+{
+  "loading":"Caricamento...",
+  "selectLocale":"Seleziona questa lingua",
+  "messages":{
+    "esqueciMinhaSenha":"Riceverai un'e-mail con le istruzioni per reimpostare la password.",
+    "success":"Successo!",
+    "error":"Errore!",
+    "msg_success":"Operazione eseguita con successo!",
+    "msg_error":"Spiacenti, non è stato possibile eseguire questa operazione.<br>Controlla i campi e riprova.",
+    "sorry":"Oops! Mi Dispiace per Quello.",
+    "ops":"Oops!",
+    "pageNotFound":"Pagina Non Trovata"
+  },
+  "admin":"Amn",
+  "normal":"Normale",
+  "labelAdmin":"Amn",
+  "labelNormal":"Normale",
+  "no-regs":"Nessun Record Trovato"
+}

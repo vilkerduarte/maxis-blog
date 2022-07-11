@@ -1,0 +1,13 @@
+{
+  "pageTitle":"Login",
+  "myLink":"/login",
+  "messages":{
+    "error":"Oops! Qualcosa non va.<br>Controlla i campi e riprova."
+  },
+  "placeholderEmail":"E-mail",
+  "placeholderSenha":"Password",
+  "recoverPass":"Ho dimenticato la mia password",
+  "btnLabel":"Login",
+  "askSignUp":"Non sei ancora registrato?",
+  "actionRegister":"Registrati!"
+}

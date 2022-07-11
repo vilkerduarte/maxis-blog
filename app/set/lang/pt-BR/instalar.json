@@ -1,0 +1,19 @@
+{
+  "pageTitle":"Instalar",
+  "myLink":"/instalar",
+  "title":"Instalação do Banco de Dados",
+  "messages":{
+    "dados_dbNotFound":"Arquivo dados_db.php Não Encontrado!",
+    "DbNotFound":"Banco de Dados Não Encontrado!"
+  },
+  "host":"Host",
+  "user":"Usuário",
+  "pass":"Senha",
+  "DB":"Nome do Banco de Dados",
+  "btnLabel":"Instalar",
+  "status":{
+    "first":"Construindo...",
+    "second":"Configurando...",
+    "third":"Concluindo..."
+  }
+}

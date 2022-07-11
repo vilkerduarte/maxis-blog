@@ -1,0 +1,12 @@
+{
+   "mensagens":{
+     "cadastro":"Your account has been successfully created.<br>Enjoy!",
+     "altPassword":"Your password has been changed.<br>If you have not requested a password change, please contact us immediately.",
+     "esqueciMinhaSenha":"We have received your request to reset your password.<br>If you have not requested this recovery, please contact our support immediately.<br>Click the link below to reset your password.<br> <br>Access the Link to Reset Your Password: <a href=\"{%endereco%}/redefinir-minha-senha?key={%hash%}\">{%endereco%}{{redefinir-minha-senha.myLink}}?key={%hash%}</a>"
+   },
+   "assuntos":{
+     "cadastro":"Thank you for registering",
+     "altPassword":"Password Changed",
+     "esqueciMinhaSenha":"Password Recovery",
+   }
+}

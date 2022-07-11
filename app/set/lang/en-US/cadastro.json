@@ -1,0 +1,19 @@
+{
+  "pageTitle":"Register",
+  "myLink":"/register",
+  "messages":{
+    "conflito":"Oops! There was a Conflict!<br>This email address is already registered in our system.<br>If you need to recover your password, click <a href=\"/forgot-my-password\">here</a>",
+    "errorPass":"Passwords do not match, or do not have 6 characters or more."
+  },
+  "pageSubtitle":"Register",
+  "nome":"Full Name",
+  "email":"E-mail",
+  "senha":"Password",
+  "confirmarSenha":"Confirm Password",
+  "btnLabel":"Register",
+  "terms":{
+    "text":"By clicking on the register button, you declare that you have read and agree to our ",
+    "link":"/terms",
+    "raiz":"Terms Of Use"
+  }
+}

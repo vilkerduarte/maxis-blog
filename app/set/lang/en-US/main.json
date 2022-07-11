@@ -1,0 +1,19 @@
+{
+  "loading":"Loading...",
+  "selectLocale":"Select this language",
+  "messages":{
+    "esqueciMinhaSenha":"You will receive an email with instructions to reset your password.",
+    "success":"Successful!",
+    "error":"Error!",
+    "msg_success":"Operation successfully completed!",
+    "msg_error":"Oops, this operation could not be performed.<br>Check the fields and try again.",
+    "sorry":"Oops! Sorry about that.",
+    "ops":"Oops!",
+    "pageNotFound":"Page Not Found"
+  },
+  "admin":"Admin",
+  "normal":"Common",
+  "labelAdmin":"Admin",
+  "labelNormal":"Common",
+  "no-regs":"No results found"
+}

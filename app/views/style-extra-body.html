@@ -1,0 +1,128 @@
+<style>
+.font-nota{font-family:'B612 Mono';}
+::-webkit-scrollbar-button{width:10px; background:var(--color_2); border-radius:8px;}
+.menu{
+	height:60px;
+}
+.menu-item{
+	line-height:60px;
+	font-size:13pt;
+	font-weight:bold;
+	background-color:transparent;
+	padding:0px 25px;
+	color: #ffffff;
+	text-shadow:0 0 3px #ffffff15;
+	transition:all 350ms ease-in-out;
+}
+.menu-item:hover{
+	background-color:var(--color_1);
+	padding:0px 25px;
+	color:#ffffff;
+	text-shadow:0 0 18px #FFFFFF;
+}
+.logo{
+	position:absolute;
+}
+.logo img{
+	max-width:100%;
+	padding:5px 0;
+	height:60px;
+}
+.btn-menu,#menu-open-close{
+	display: none;
+}
+.location-header{
+	display:inline-block;
+	width:auto;
+	position:absolute;
+	top:10px;
+	padding-right:5px;
+	left:200px;
+	font-weight:bold;
+	font-size:12pt;
+	color:#fff;
+	line-height:38px;
+	cursor:pointer;
+	border:1px solid #ffffff00;
+	border-radius:8px;
+	transition:all 200ms ease-in-out;
+}
+.location-header:hover{
+	border:1px solid #ffffff;
+}
+@media (max-width:800px){
+	.header-new{
+		position: fixed !important;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: -101%;
+		z-index: 3;
+		padding: 15px 15px !important;
+		transition: all 300ms ease-out;
+	}
+	.header-new .logo{
+		width: 100%;
+		display: block;
+		position: relative;
+	}
+	.header-new .logo img{
+		width: 100%;
+		height: 150px;
+	}
+	.header-new .menu{
+		display: block;
+	}
+	.header-new .menu .menu-item,
+	.header-new .menu .menu-item:hover{
+		display: block !important;
+		width: 100% !important;
+		line-height: normal !important;
+		padding: 15px 5px;
+		background-color: var(--color_4);
+		text-shadow:0 0 15px var(--color_2);
+		font-weight:bold;
+		color: var(--color_2);
+		margin-bottom: 5px;
+		border-radius: 4px;
+		text-align: center;
+		transition: all 200ms ease-in-out;
+	}
+	.header-new .menu .menu-item:active{
+		color: var(--color_4);
+		background-color: var(--color_2);
+	}
+	.header-new .location-header{
+		position: relative;
+		display: block;
+		width: 100%;
+		margin-bottom: 50px;
+		text-align: center;
+		left:unset;
+	}
+	.btn-menu{
+		position: fixed;
+		display: inline-block;
+		background-color: var(--color_2)00;
+		color:var(--color_2);
+		top:13px;
+		left: 10px;
+		font-size: 23pt;
+		line-height: 40px;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		border-radius: 50%;
+		z-index: 5;
+	}
+
+	#menu-open-close:checked + .header-new{
+		left: 0;
+	}
+	.top-bar{
+		padding-left: 50px;
+		text-align: right;
+	}
+}
+
+</style>

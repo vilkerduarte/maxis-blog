@@ -1,0 +1,121 @@
+<div class="container my-5">
+  <h2 class="family-title-master col-12 text-center font-20 mb-4 bold">Criar Postagem</h2>
+  <form class="w-100 formAlt" action="" id="ss" method="post">
+    <div class="field">
+      <input type="file" id="thumb-input" accept="image/jpeg;image/x-png;image/png" placeholder=" " required/>
+      <p class="label">Thumbnail</p>
+    </div>
+    <div class="field">
+      <input type="text" placeholder=" " name="newPost[title]" required/>
+      <p class="label">Título</p>
+    </div>
+    <div class="field">
+      <input type="text" placeholder=" " id="url_input" onkeyup="checkUrl(this)" name="newPost[url]" required/>
+      <p class="label">URL</p>
+    </div>
+    <div class="field">
+      <input type="text" placeholder=" " name="newPost[description]" required/>
+      <p class="label">Descrição</p>
+    </div>
+    <div class="field">
+      <textarea rows="15" placeholder=" " name="newPost[post]" required></textarea>
+      <p class="label">Conteúdo</p>
+    </div>
+    <input type="hidden" name="token" value="{%token%}"/>
+    <div class="w-100 text-center">
+      <button id="btnCriar">Criar</button>
+    </div>
+  </form>
+</div>
+<style media="screen">
+  button:disabled{
+    opacity: 0.3;
+    filter: grayscale(1);
+  }
+</style>
+<script type="text/javascript">
+  document.getElementById('btnCriar').disabled = true;
+  $("#thumb-input")[0].onchange = function(){
+    var rd = new FileReader();
+    rd.readAsDataURL(this.files[0]);
+    rd.onload = function () {
+	    var base64 = rd.result;//base64encoded string
+      base64 = base64.substring(base64.indexOf(",")+1);
+      console.log("Image: ",base64);
+    };
+  }
+  document.getElementById('btnCriar').onclick = function(e){
+    e.preventDefault();
+    if(!document.getElementById('btnCriar').disabled){
+      $("#loader").fadeIn();
+      if($("#thumb-input")[0].files[0] == undefined){
+        sendForm();
+      }else{
+        sendThumb($("#thumb-input")[0],$('#url_input')[0].value);
+      }
+    }
+  };
+  async function sendThumb(imageInput,name){
+    var url = "{%storage_url%}/upload/"+name;
+    var tokenStorage = await fetch("/include/get_token_storage");
+    tokenStorage = await tokenStorage.text();
+    console.log(tokenStorage);
+    var reader = new FileReader();
+    reader.readAsDataURL(imageInput.files[0]);
+    reader.onload = function () {
+	    var base64File = reader.result;//base64Fileencoded string
+      base64File = base64File.substring(base64File.indexOf(",")+1);
+      var request = {
+        token:tokenStorage,
+        base64:base64File,
+      };
+      $.post(url,request,function(data){
+        sendForm();
+      })
+      .fail(function(){
+        sendForm();
+      });
+
+    };
+    reader.onerror = function (error) {
+      sendForm();
+    };
+  }
+  function sendForm(){
+    $("form#ss")[0].submit();
+  }
+  function normalize (text){
+    text = text.toLowerCase();
+    text = text.replace(new RegExp('[ÁÀÂÃ]','gi'), 'a');
+    text = text.replace(new RegExp('[ÉÈÊ]','gi'), 'e');
+    text = text.replace(new RegExp('[ÍÌÎ]','gi'), 'i');
+    text = text.replace(new RegExp('[ÓÒÔÕ]','gi'), 'o');
+    text = text.replace(new RegExp('[ÚÙÛ]','gi'), 'u');
+    text = text.replace(new RegExp('[Ç]','gi'), 'c');
+    return text;
+  }
+  function checkUrl(elem){
+    elem.value = elem.value.toLowerCase();
+    elem.value = elem.value.replace(/[!@#$%¨&*\(\)'"\\\/\[\]\{\}\=\?+§¹²³£¢¬|\^\~\´\`\;\:\,\.\<\>]/g,'');
+    elem.value = elem.value.replaceAll(' ','-');
+    elem.value = elem.value.replaceAll('ç','c');
+    elem.value = normalize(elem.value);
+    if(elem.value.length > 2){
+      $.post("/include/checkurl",{"url":elem.value},function(info){
+        if(info == "ok"){
+          document.getElementById('btnCriar').disabled = false;
+          elem.style = "border:3px solid var(--success)";
+          elem.title= "";
+        }else{
+          elem.style = "border:3px solid var(--danger)";
+          elem.title= "URL Indisponível";
+          document.getElementById('btnCriar').disabled = true;
+        }
+      });
+    }else{
+      elem.style = "";
+      elem.title= "";
+      document.getElementById('btnCriar').disabled = true;
+    }
+  }
+</script>

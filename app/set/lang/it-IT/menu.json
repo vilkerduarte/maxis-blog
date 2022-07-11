@@ -1,0 +1,15 @@
+{
+  "default":{
+    "Inizio":"/"
+  },
+  "externo":{
+    "Login":"/login"
+  },
+  "normal":{
+    "Disconnettersi":"/disconnettersi"
+  },
+  "admin":{
+    "Cruscotto":"/cruscotto",
+    "Disconnettersi":"/disconnettersi"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "pageTitle":"Users",
+  "myLink":"/users",
+  "fieldName":"Name",
+  "fieldEmail":"Email",
+  "fieldStatus":"Status",
+  "fieldOpts":"Actions",
+  "fieldSld":"Balance",
+  "fieldType":"Type",
+  "fieldHash":"Hash",
+  "fieldNasc":"Birth date",
+  "fieldSSN":"SSN",
+  "lbSeeUser":"See More",
+  "lbAdmin":"Administrator",
+  "lbSingleUser":"Regular User",
+  "titleActionBloquear":"Block/Unblock User",
+  "titleActionUnset":"Delete User",
+  "titleActionPriv":"Change Privileges",
+  "lbInsc":"Enrolled in {%data%}",
+  "button":"New User"
+}

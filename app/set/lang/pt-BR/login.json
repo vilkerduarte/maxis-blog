@@ -1,0 +1,13 @@
+{
+  "pageTitle":"Entrar",
+  "myLink":"/entrar",
+  "messages":{
+    "error":"Ops! Algo Não Está Certo.<br>Verifique os Campos e Tente Novamente."
+  },
+  "placeholderEmail":"Email",
+  "placeholderSenha":"Senha",
+  "recoverPass":"Esqueci Minha Senha",
+  "btnLabel":"Entrar",
+  "askSignUp":"Ainda não é cadastrado?",
+  "actionRegister":"Cadastre-se!"
+}

@@ -1,0 +1,19 @@
+{
+  "pageTitle":"Cadastre-se",
+  "myLink":"/cadastrar",
+  "messages":{
+    "conflito":"Ops! Houve Um Conflito!<br>Este endereço de email já está cadastrado em nosso sistema.<br>Caso necessite recuperar sua senha, clique <a href=\"/esqueci-minha-senha\">aqui</a>",
+    "errorPass":"As Senhas Não Coincidem, ou não possui 6 caracteres ou mais."
+  },
+  "pageSubtitle":"Cadastro",
+  "nome":"Nome",
+  "email":"Email",
+  "senha":"Senha",
+  "confirmarSenha":"Confirmar Senha",
+  "btnLabel":"Cadastrar",
+  "terms":{
+    "text":"Ao clicar em <strong>Cadastrar</strong>, você declara que leu e concorda com os nossos ",
+    "link":"/termos-de-uso",
+    "raiz":"Termos de Uso"
+  }
+}

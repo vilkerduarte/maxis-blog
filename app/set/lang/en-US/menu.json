@@ -1,0 +1,15 @@
+{
+  "default":{
+    "Home":"/"
+  },
+  "externo":{
+    "Sign In":"/login"
+  },
+  "normal":{
+    "Logout":"/logout"
+  },
+  "admin":{
+    "Dashboard":"/dashboard",
+    "Logout":"/logout"
+  }
+}

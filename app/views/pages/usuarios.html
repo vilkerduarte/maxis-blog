@@ -1,0 +1,22 @@
+<div class="container py-4">
+	<div class="row w-100">
+    	<h1 class="col-12 family-title-master font-50 text-left mb-5">{{usuarios.pageTitle}}</h1>
+        <div class="w-100 text-left formAlt p-3">
+        	<a href="/{{cadastro.myLink}}"><button>{{usuarios.button}}</button></a>
+        </div>
+        {%regs%}
+    </div>
+</div>
+<script>
+	function makeAction(act,ref){
+		$.post('/usuarios',{
+			action:act,
+			hash:ref,
+			token:'{%token%}'
+		},function(info){
+			if(info == 'ok'){
+				window.location.href = "";
+			}
+		});
+	}
+</script>

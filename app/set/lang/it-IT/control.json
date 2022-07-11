@@ -1,0 +1,19 @@
+{
+  "DIR":{
+    "cadastro":"registrati",
+    "esqueci-minha-senha":"recuperare-password",
+    "sair":"disconnettersi",
+    "usuarios":"utenti",
+    "acesso-negado":"accesso-negato",
+    "configuracoes":"impostazioni",
+    "instalar":"installare",
+    "manutencao":"manutenzione",
+    "meus-dados":"il-mio-account",
+    "temporariamente-indisponivel":"temporaneamente-non-disponibile",
+    "ver-usuario":"membro",
+    "financeiro":"finanziario",
+    "not-found":"non-trovato",
+    "dashboard":"cruscotto",
+    "termos-de-uso":"termini-di-utilizzo"
+  }
+}

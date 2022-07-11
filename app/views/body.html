@@ -1,0 +1,69 @@
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="description" content="{%global>sys>description%}">
+  <link rel="icon" type="image/png" href="{%global>endereco-site%}/img/fav.png" sizes="500x500">
+	<title>{%title-page%}</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Encode+Sans+Condensed|Quicksand|Nunito|Kaushan+Script" rel="stylesheet">
+	<link rel="stylesheet" href="{%global>endereco-site%}/css/all.min.css">
+  <link rel="stylesheet" href="{%global>endereco-site%}/css/bootstrap.css">
+  <link rel="stylesheet" href="{%global>endereco-site%}/css/animation.css">
+	<link rel="stylesheet" href="{%global>endereco-site%}/css/vars.css">
+	<link rel="stylesheet" href="{%global>endereco-site%}/css/style.css">
+
+  <script src="{%global>endereco-site%}/js/jquery-2.1.1.js"></script>
+  <script src="{%global>endereco-site%}/js/Du-Art.js"></script>
+  {%extra-head%}
+</head>
+<body>
+
+	<!-- LOADER -->
+	<div class="loader-fundo" id="loader">
+    	<div class="loader-content fadeIn___ protege">
+        	<div class="lds-css ng-scope">
+                <div style="" class="lds-eclipse">
+                    <div style="box-shadow: 0 4px 0 0 {%global>cor2%};"></div>
+                </div>
+            </div>
+            <b class="d-block w-100 text-center font-18" id="loader-label" style="color: #777;">{{main.loading}}</b>
+        </div>
+    </div>
+
+<!-- MODAL -->
+	<div class="fundo-modal force-hide">
+		<div class="frame-modal">
+        	<div id="close-modal" onClick="close_modal()">x</div>
+        	<h2 id="title-modal" class="font-24"></h2>
+            <p id="text-modal" class="text-center d-block w-100"></p>
+        </div>
+        <div class="fundo-modal force-hide" style="opacity:0;top:0;" onClick="close_modal()"></div>
+    </div>
+    <div class="fundo-page-modal force-hide">
+		<div class="frame-page-modal body-full">
+        	<div id="close-page-modal" onClick="close_page_modal()">x</div>
+            <div class="row w-100" id="content-page-modal"></div>
+        </div>
+        <div class="fundo-page-modal force-hide" style="opacity:0; top:0;" onClick="close_page_modal()"></div>
+    </div>
+    {%top%}
+    {%content%}
+		<script src="/js/fingerprint.js" type="text/javascript"></script>
+    {%bottom%}
+    <script>
+
+	jQuery('a.page-scroll').bind('click', function(event) {
+		var $anchor = jQuery(this);
+		jQuery('html, body').stop().animate({
+			scrollTop: jQuery($anchor.attr('href')).offset().top
+		}, 1500, 'easeInOutExpo');
+		event.preventDefault();
+	});
+	$(document).ready(function(){
+		$('#loader').fadeOut();
+		{%bottom-script%}
+	});
+	</script>
+</body>
+</html>

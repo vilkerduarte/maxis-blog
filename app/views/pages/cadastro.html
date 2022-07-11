@@ -1,0 +1,35 @@
+<div class="col-3">&nbsp;</div>
+<div class="col-6">
+    <form class="w-100 border-radius-8px formAlt px-1 py-4" action="" method="post">
+        <div class="field">
+            <input type="text" placeholder=" " name="cad[nome]" required>
+            <p class="label">{{cadastro.nome}}</p>
+        </div>
+        <div class="field">
+            <input type="email" placeholder=" " name="cad[email]" required>
+            <p class="label">{{cadastro.email}}</p>
+        </div>
+        <div class="row w-100">
+            <div class="col-6 p-0">
+                <div class="field">
+                    <input type="password" placeholder=" " name="cad[senha]" required>
+                    <p class="label">{{cadastro.senha}}</p>
+                </div>
+            </div>
+            <div class="col-6 p-0">
+                <div class="field">
+                    <input type="password" placeholder=" " name="cad[csenha]" required>
+                    <p class="label">{{cadastro.confirmarSenha}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 {%class-termos-de-uso%}">
+            <p class="font-12 text-center color_3">{{cadastro.terms.text}}<a href="{{cadastro.terms.link}}" class="link_hover">{{cadastro.terms.raiz}}</a>.</p>
+        </div>
+        <input type="hidden" name="token" value="{%token%}">
+        <div class="w-100 text-center p-1">
+            <button>{{cadastro.btnLabel}}</button>
+        </div>
+    </form>
+</div>
+<div class="col-3">&nbsp;</div>

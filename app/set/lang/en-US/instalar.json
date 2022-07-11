@@ -1,0 +1,19 @@
+{
+  "pageTitle":"Install",
+  "myLink":"/install",
+  "title":"Database Installation",
+  "messages":{
+    "dados_dbNotFound":"dados_db.php file not found!",
+    "DbNotFound":"Database Not Found!"
+  },
+  "host":"Host",
+  "user":"User",
+  "pass":"Password",
+  "DB":"Database Name",
+  "btnLabel":"Install",
+  "status":{
+    "first":"Building...",
+    "second":"Configuring...",
+    "third":"Finishing..."
+  }
+}

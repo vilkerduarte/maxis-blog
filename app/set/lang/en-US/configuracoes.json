@@ -1,0 +1,23 @@
+{
+  "pageTitle":"Settings",
+  "myLink":"/settings",
+  "subtitle1":"Access control",
+  "newConfig":"New Configuration",
+  "configAtual":"Current Settings",
+  "accessControl":{
+    "labelLevel":"Access Level",
+    "labelDir":"Directory"
+  },
+  "btnConfig":"Configure",
+  "languagePackage":{
+    "title":"Language Packs",
+    "labelIdentify":"Identifier",
+    "labelValue":"Value"
+  },
+  "btnAdd":"Add",
+  "languageDir":{
+    "title":"Multilingual Friendly Links",
+    "labelLink":"Reference Link <font class=\"font-8\">Ex. &quot;/users&quot;</font>",
+    "labelInclude":"Include <font class=\"font-8\">Ex. &quot;usuarios&quot;</font>"
+  }
+}

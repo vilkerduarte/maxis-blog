@@ -1,0 +1,15 @@
+{
+  "default":{
+    "Início":"/"
+  },
+  "externo":{
+    "Entrar":"/entrar"
+  },
+  "normal":{
+    "Sair":"/sair"
+  },
+  "admin":{
+    "Administração":"/painel-de-controle",
+    "Sair":"/sair"
+  }
+}

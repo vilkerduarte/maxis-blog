@@ -1,0 +1,1 @@
+UPDATE `v8bg__progresso` SET `nota`='80' `ID` = 1

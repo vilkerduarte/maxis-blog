@@ -1,0 +1,19 @@
+{
+  "pageTitle":"Installare",
+  "myLink":"/installare",
+  "title":"Installazione Del Database",
+  "messages":{
+    "dados_dbNotFound":"File dados_db.php non trovato!",
+    "DbNotFound":"Database non trovato!"
+  },
+  "host":"Host",
+  "user":"Utente",
+  "pass":"Password",
+  "DB":"Nome Database",
+  "btnLabel":"Installare",
+  "status":{
+    "first":"Costruendo...",
+    "second":"Impostando...",
+    "third":"Finendo..."
+  }
+}

@@ -1,0 +1,31 @@
+{%extra%}
+<!-- <input type="checkbox" id="menu-open-close">
+<div class="w-100 {%class%} position-relative protege">
+	<div class="container">
+	<div class="logo">
+    	<img class="{%class-logo%}" src="{%logo-link%}">
+    </div>
+    {%extra-content%}
+    <div class="menu {%class-menu%}">{%menu%}</div>
+    </div>
+</div> -->
+<input type="checkbox" id="menu-open-close">
+<div class="w-100 {%class%} position-relative protege">
+	<div class="container">
+		<div class="row w-100">
+			<div class="col-3">
+				<div class="logo">
+		    	<!-- <img class="{%class-logo%}" src="{%logo-link%}"> -->
+		    </div>
+			</div>
+			<div class="col-1">
+			{%extra-content%}
+			</div>
+			<div class="col-8" style="display: flex;flex-wrap: wrap;align-items: center;justify-content: flex-end;">
+				<!-- <div class="locale-frame mr-3" style=" display: flex; flex-wrap: wrap; align-items: center; align-content: center;">{%locales%}</div> -->
+	    	<div class="menu {%class-menu%}">{%menu%}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<label class="btn-menu icon" for="menu-open-close">q</label>

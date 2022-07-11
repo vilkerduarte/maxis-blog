@@ -1,0 +1,23 @@
+{
+  "pageTitle":"Configurações",
+  "myLink":"/configuracoes",
+  "subtitle1":"Controle de Acesso",
+  "newConfig":"Nova Configuração",
+  "configAtual":"Configurações Atuais",
+  "accessControl":{
+    "labelLevel":"Acesso",
+    "labelDir":"Diretório"
+  },
+  "btnConfig":"Configurar",
+  "languagePackage":{
+    "title":"Pacotes de Idiomas",
+    "labelIdentify":"Identificador",
+    "labelValue":"Valor"
+  },
+  "btnAdd":"Adicionar",
+  "languageDir":{
+    "title":"Links Amigáveis em Multilinguagem",
+    "labelLink":"Link de referência <font class=\"font-8\">Ex. &quot;/painel-de-controle&quot;</font>",
+    "labelInclude":"Nome do Include <font class=\"font-8\">Ex. &quot;dashboard&quot;</font>"
+  }
+}

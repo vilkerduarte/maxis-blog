@@ -1,0 +1,13 @@
+{
+  "pageTitle":"Login",
+  "myLink":"/login",
+  "messages":{
+    "error":"Oops! Something Is Not Right.<br>Check the Fields and Try Again."
+  },
+  "placeholderEmail":"Email",
+  "placeholderSenha":"Password",
+  "recoverPass":"Forgot My Password",
+  "btnLabel":"Login",
+  "askSignUp":"Are you still not registered?",
+  "actionRegister":"Sign up!"
+}

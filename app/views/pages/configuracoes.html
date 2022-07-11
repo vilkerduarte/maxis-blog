@@ -1,0 +1,308 @@
+<div class="container">
+	<div class="row w-100 pt-5">
+    	<h2 class="col-12 font-30 text-center family-title-master mb-5">{{configuracoes.pageTitle}}</h2>
+        <div class="row w-100 mt-2 mb-2 pt-3 border-radius-8px border_color">
+            <!-- Início Controle de Acesso -->
+            <h2 class="col-12 font-24 family-title-master text-left mb-3">{{configuracoes.subtitle1}}</h2>
+            <div class="col-6">
+                <div class="row w-100">
+                    <h2 class="col-12 font-15 family-title-master bold text-left">{{configuracoes.configAtual}}</h2>
+                    {%regs-controle-de-acesso%}
+                </div>
+            </div>
+            <div class="col-6">
+                <form class="row w-100 formAlt border_left_color" action="" method="post" enctype="multipart/form-data">
+                    <h2 class="col-12 font-15 family-title-master bold text-left mb-3">{{configuracoes.newConfig}}</h2>
+                    <div class="col-6">
+                    	<div class="field">
+                        	<input type="text" name="set[0]" placeholder=" " required>
+                        	<p class="label">{{configuracoes.accessControl.labelDir}}</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+	                    <h2 class="w-100 font-12 bold text-left">{{configuracoes.accessControl.labelLevel}}</h2>
+                    	<div class="field text-center">
+                        	<input type="radio" name="set[1]" id="adm-i1" value="admin" required>
+                            <label for="adm-i1">{{labelAdmin}}</label>
+
+                        	<input type="radio" name="set[1]" id="nrm-i1" value="normal" required>
+                            <label for="nrm-i1">{{labelNormal}}</label>
+                        </div>
+                        <input type="hidden" name="token" value="{%token%}">
+                    </div>
+                    <div class="col-12 p-3 text-center mt-3">
+                        <button>{{configuracoes.btnConfig}}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container py-5 border_bottom_color">
+	<div class="row">
+		<h2 class="col-12 font-24 text-center mb-2">{{configuracoes.languagePackage.title}}</h2>
+		<div class="border-radius-8px border_color shadow bg-light text-left col-12 mb-5 py-2">
+			{%items-lang%}
+		</div>
+		<div class="col-8">
+			<div class="row w-100">
+					<h2 class="col-12 font-18 text-left">{{configuracoes.configAtual}}</h2>
+					<div class="col-4 px-0 ItemsPackageLanguageConf"></div>
+					<div class="col-8 SubItemsPackageLanguageConf"></div>
+				</div>
+		</div>
+		<div class="col-4">
+				<div class="row w-100 formAlt">
+					<h2 class="col-12 font-18 text-left mb-3">{{configuracoes.newConfig}}</h2>
+						<div class="col-12">
+								<div class="field">
+									<input type="text" id="MULTILANG_link" placeholder=" " required>
+										<p class="label">{{configuracoes.languagePackage.labelIdentify}}</p>
+								</div>
+								<div class="field">
+									<input type="text" id="MULTILANG_include" placeholder=" " required>
+										<p class="label">{{configuracoes.languagePackage.labelValue}}</p>
+								</div>
+						</div>
+						<div class="col-12 p-3 text-center mt-3 mb-3">
+								<button onclick="addPackageItem()">{{configuracoes.btnAdd}}</button>
+						</div>
+				</div>
+		</div>
+	</div>
+</div>
+<div class="container py-5 border_bottom_color">
+
+	<div class="row">
+		<h2 class="col-12 font-24 text-center mb-2">{{configuracoes.languageDir.title}}</h2>
+		<div class="border-radius-8px border_color shadow bg-light text-left col-12 mb-5 py-2">
+			{%items-lang%}
+		</div>
+		<div class="col-8">
+			<div class="row w-100">
+					<h2 class="col-12 font-18 text-left">{{configuracoes.configAtual}}</h2>
+					<div class="w-100 ItemsMultiLanguageConf"></div>
+				</div>
+		</div>
+		<div class="col-4">
+				<div class="row w-100 formAlt">
+					<h2 class="col-12 font-18 text-left mb-3">{{configuracoes.newConfig}}</h2>
+						<div class="col-12">
+								<div class="field">
+									<input type="text" id="MULTIDIR_link" placeholder=" " required>
+										<p class="label">{{configuracoes.languageDir.labelLink}}</p>
+								</div>
+								<div class="field">
+									<input type="text" id="MULTIDIR_include" placeholder=" " required>
+										<p class="label">{{configuracoes.languageDir.labelInclude}}</p>
+								</div>
+								<input type="hidden" name="token" value="{%token%}">
+						</div>
+						<div class="col-12 p-3 text-center mt-3 mb-3">
+								<button onclick="add()">{{configuracoes.btnAdd}}</button>
+						</div>
+				</div>
+		</div>
+	</div>
+</div>
+<style media="screen">
+	.item-lang-select{
+		background-color: var(--color_2);
+		color: #fff;
+		border-radius: 20px;
+		padding: 3px 15px;
+		display: inline-block;
+		margin: 3px 2px;
+		box-shadow: 3px 4px 2px 1px rgba(15,15,15,0);
+		transition: all 250ms ease-in-out;
+	}
+	.item-lang-select:hover{
+		transform: scale(1.08);
+		margin: 3px 4px;
+		box-shadow: 3px 4px 2px 1px rgba(15,15,15,0.27);
+	}
+	.item-lang-select.active{
+		transform: scale(1.18);
+		margin: 3px 4px;
+		box-shadow: 3px 4px 2px 1px rgba(15,15,15,0.27);
+	}
+	.subItPackageLang[data-pai]{
+		transform-origin: right;
+		transform: scale(0.95) !important;
+	}
+
+</style>
+<script type="text/javascript">
+	var SELECTED_LOCALE = '{%LOCALE%}';
+	var SELECTED_SUBPACKAGE = '';
+	function refreshLang(){
+		searchLangDir(SELECTED_LOCALE);
+		setLangPackage(SELECTED_LOCALE);
+	}
+	function setLang(locale){
+		SELECTED_LOCALE = locale;
+		refreshLang();
+		return false;
+	}
+	function searchLangDir(locale){
+		document.querySelector(".ItemsMultiLanguageConf").innerHTML = '';
+		$('.item-lang-select.active').removeClass('active');
+		$('.it-lang_'+locale).addClass('active');
+		$.get("/configuracoes/multiLanguageConfiguredDirs/"+locale,{},function(result){
+			SELECTED_LOCALE = locale;
+
+			for(var prop in result){
+				var ch = [
+					ElementMaker('div.col-6.bg_color_3.text-white.bold'),
+					ElementMaker('div.col-6.border-left.bg-light.bold')
+				];
+				ch[0].innerText = prop;
+				ch[1].innerText = result[prop];
+				var el = ElementMaker('div.row.w-100.font-12.text-left.mb-1.border-radius-8px.overflow-hidden.border.activeAction',{"childs":ch});
+				el.oncontextmenu = function(e){
+					var menu = new MenuClickRight([
+					MenuClickRight.createItem("Excluir","#",function(){
+						unlinkDirMultiLanguage(prop);
+					})
+					]);
+					menu.open(e,this);
+					return false;
+				}
+				document.querySelector(".ItemsMultiLanguageConf").appendChild(el);
+			}
+		});
+		return false;
+	}
+	function unlinkDirMultiLanguage(item){
+
+		$.get('/configuracoes/unlinkDirMultiLanguage/'+SELECTED_LOCALE+'/'+item,{},function(result){
+
+			if(result == 'ok'){
+				refreshLang();
+			}
+		});
+	}
+	function add(){
+		var lk = document.querySelector('#MULTIDIR_link');
+		var inc = document.querySelector('#MULTIDIR_include');
+		if(lk.value.length > 0 && inc.value.length > 0){
+			$.post('/configuracoes/add/'+SELECTED_LOCALE,{
+				"link":lk.value,
+				"include":inc.value
+			},function(){
+				refreshLang();
+			});
+			lk.value = '';
+			inc.value = '';
+		}else{
+			modal("Erro!","Verifique Todos os Campos!");
+		}
+	}
+	refreshLang();
+
+	function setLangPackage(locale){
+		document.querySelector(".ItemsPackageLanguageConf").innerHTML = '';
+		document.querySelector(".SubItemsPackageLanguageConf").innerHTML = '';
+		$('.item-lang-select.active').removeClass('active');
+		$('.it-lang_'+locale).addClass('active');
+		$.get("/langConfig/"+locale,{},function(result){
+			console.log(result);
+			for(var prop in result){
+
+				var el = ElementMaker('div.itPackageLang.row.w-100.protege.pointer.font-12.text-left.mb-1.border-radius-8px.overflow-hidden.border.activeAction.bg_color_3.text-white.bold.px-3');
+				el.innerText = result[prop];
+				el.oncontextmenu = function(e){
+					var menu = new MenuClickRight([
+					MenuClickRight.createItem("Excluir","#",function(){
+
+					})
+					]);
+					menu.open(e,this);
+					return false;
+				}
+				el.onclick = function(){
+					showItemPackageLang(this);
+				}
+				document.querySelector(".ItemsPackageLanguageConf").appendChild(el);
+			}
+		});
+		return false;
+	}
+	function showItemPackageLang(el){
+		var pack = el.innerText;
+		$.when($('.itPackageLang').removeClass('bg_color_1')).then($('.itPackageLang').addClass('bg_color_3')).done($(el).removeClass('bg_color_3').addClass('bg_color_1'));
+		document.querySelector(".SubItemsPackageLanguageConf").innerHTML = '';
+		$.get("/langConfig/"+SELECTED_LOCALE+"/"+pack,{},function(result){
+			console.log(result);
+			for(var prop in result){
+				if(typeof result[prop] === 'object'){
+					var els = [];
+					els[0] = ElementMaker('div.subItPackageLang.row.w-100.protege.pointer.font-12.text-left.mb-1.border-radius-8px.overflow-hidden.border.activeAction.bold.bg_color_2.text-white.px-3');
+					els[0].innerText = prop;
+					var b = result[prop];
+					for(var a in b){
+						if(typeof b[a] === 'object'){
+							var d = b[a];
+							for(var c in d){
+								if(typeof d[c] !== 'object'){
+									var tempEl = DOMsubItemPackage(c,d[c],function(){});
+									tempEl.dataset.pai = a;
+									els[els.length] = tempEl;
+								}
+							}
+						}else{
+							var tempEl = DOMsubItemPackage(a,b[a],function(){});
+							tempEl.dataset.pai = prop;
+							els[els.length] = tempEl;
+						}
+					}
+					var el = ElementMaker('div.w-100',{"childs":els});
+				}else{
+					var el = DOMsubItemPackage(prop,result[prop],function(){});
+				}
+				document.querySelector(".SubItemsPackageLanguageConf").appendChild(el);
+			}
+		});
+	}
+	function DOMsubItemPackage(key,value,actionClick){
+		var ch = [
+			ElementMaker('div.col-6.bg_color_4.text-white.bold'),
+			ElementMaker('div.col-6.border-left.bg-light.bold')
+		];
+		ch[0].innerText = key;
+		ch[1].innerText = value;
+		var el = ElementMaker('div.subItPackageLang.row.w-100.protege.pointer.font-12.text-left.mb-1.border-radius-8px.overflow-hidden.border.activeAction.bold',{"childs":ch});
+		el.oncontextmenu = function(e){
+			var elem = this;
+			var menu = new MenuClickRight([
+			MenuClickRight.createItem("Excluir","#",function(){
+				return excluirSubItemPackage(elem);
+			})
+			]);
+			menu.open(e,this);
+			return false;
+		}
+		el.onclick = actionClick;
+		return el;
+	}
+	function addPackageItem(){
+		var k = $('#MULTILANG_link')[0];
+		var v = $('#MULTILANG_include')[0];
+
+		if(k.value.length > 0 && v.value.length > 0){
+			$.post('/langConfig/'+SELECTED_LOCALE,{
+				"key":k.value,
+				"value":v.value
+			},function(){
+				showItemPackageLang($('.itPackageLang.bg_color_1')[0]);
+			});
+			k.value = '';
+			v.value = '';
+		}else{
+			modal("Erro!","Verifique Todos os Campos!");
+		}
+	}
+	function excluirSubItemPackage(elem){
+		return false;
+	}
+</script>

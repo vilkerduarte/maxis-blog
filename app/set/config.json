@@ -1,0 +1,65 @@
+{
+    "title": "Avalia",
+    "description": "Avaliações de aplicações financeiras",
+    "site": "avalia.site",
+    "url_storage": "https://storage.7exp.us",
+    "logo": "/files/avalia/logo.svg",
+    "logo_white": "/files/avalia/logo-white.svg",
+    "logo_email": "/files/avalia/logo-white.png",
+    "layout":{
+      "header":{
+        "height":"120px",
+        "padding":"13px",
+        "background":"var(--color_2)",
+        "logo":"white",
+        "side_logo":"left",
+        "side_menu":"right"
+      },
+      "body":{
+        "maxWidth":"700px",
+        "fontSize":"12pt",
+        "fontFamily":"'Calibri'",
+        "fontFamilyTitleMaster":"'Open Sans'",
+        "background":"var(--light)",
+        "color":"var(--color_1)",
+        "padding":"10px"
+      },
+      "footer":false,
+      "menu":{
+        "type":1,
+        "background":"var(--color_2)",
+        "color":"#ffffff"
+      }
+    },
+    "DB": [
+        {
+            "host": "localhost",
+            "user": "maxis_blog",
+            "pass": "dmhdNMCxyNYkwpDH",
+            "db": "maxis_blog"
+        }
+    ],
+    "prefix_db": "ai7c__",
+    "timezone": "America\/Sao_Paulo",
+    "email_system": "contato@teste.com",
+    "external_SMTP": true,
+    "SMTP": {
+        "user": "xbinaryoptions.com",
+        "pass": "EaeUj1iUnem3j3Kp",
+        "host": "mail.smtp2go.com",
+        "port": 587
+    },
+    "colors": {
+        "color_1": "#282828",
+        "color_2": "#222268",
+        "color_3": "#8888ee",
+        "color_4": "#aaccff",
+        "color_5": "#ccddff"
+    },
+    "default_locale": "pt-BR",
+    "modules": [
+        "db",
+        "users",
+        "notification"
+    ]
+}

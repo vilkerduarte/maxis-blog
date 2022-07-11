@@ -1,0 +1,45 @@
+<div class="container py-3">
+	<div class="row w-100">
+
+        <form action="" method="post" class="row w-100 formAlt">
+        	<div class="col-3">&nbsp;</div>
+            <div class="col-6">
+            	<h2 class="w-100 font-24 text-center family-title-master mb-5">{{redefinir-minha-senha.pageTitle}}</h2>
+                <input type="hidden" name="token" value="{%token%}">
+
+                <div class="field">
+                	<input type="password" id="senha-input" name="senha" placeholder=" " required>
+                    <p class="label">{{redefinir-minha-senha.senha}}</p>
+                </div>
+                <div class="field">
+                	<input type="password" id="csenha-input" name="senha" placeholder=" " required>
+                    <p class="label">{{redefinir-minha-senha.csenha}}</p>
+                </div>
+
+                <div class="w-100 p-3 text-center">
+                	<button>{{redefinir-minha-senha.button}}</button>
+                </div>
+
+            </div>
+            <div class="col-3">&nbsp;</div>
+        </form>
+    </div>
+</div>
+<script>
+$('#senha-input,#csenha-input').keyup(function(){check__();});
+$('#senha-input,#csenha-input').change(function(){check__();});
+$('#senha-input,#csenha-input').blur(function(){check__();});
+
+
+function check__(){
+	if($('#senha-input').val().length > 3){
+		if($('#senha-input').val() != $('#csenha-input').val()){
+			$('#senha-input,#csenha-input').attr('style','border:1px solid #c30000');
+		}else{
+			$('#senha-input,#csenha-input').attr('style','');
+		}
+	}else{
+		$('#senha-input,#csenha-input').attr('style','');
+	}
+}
+</script>

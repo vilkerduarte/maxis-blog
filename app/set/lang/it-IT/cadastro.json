@@ -1,0 +1,19 @@
+{
+  "pageTitle":"Registrati",
+  "myLink":"/registrati",
+  "messages":{
+    "conflito":"Oops! C'è stato un conflitto!<br>Questo indirizzo email è già registrato nel nostro sistema.<br>Se hai bisogno di recuperare la tua password, fai clic <a href=\"/recuperare-password\">qui</a>",
+    "errorPass":"Le password non corrispondono o non hanno 6 caratteri o più."
+  },
+  "pageSubtitle":"Registro",
+  "nome":"Nome",
+  "email":"E-mail",
+  "senha":"Password",
+  "confirmarSenha":"Conferma Password",
+  "btnLabel":"Registrati",
+  "terms":{
+    "text":"Facendo clic su <strong>Registrati</strong>, dichiari di aver letto e accettato i nostri ",
+    "link":"/termini-di-utilizzo",
+    "raiz":"Termini Di Utilizzo"
+  }
+}

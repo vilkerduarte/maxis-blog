@@ -1,0 +1,12 @@
+{
+  "mensagens":{
+    "cadastro":"Sua conta foi criada com sucesso.<br>Aproveite!",
+    "altPassword":"Sua senha foi alterada.<br>Se Você não solicitou uma alteração de senha, entre em contato conosco imediatamente.",
+    "esqueciMinhaSenha":"Recebemos a sua solicitação para recuperação da sua senha.<br>Caso você não tenha solicitado essa recuperação, entre em contato com o nosso suporte imediatamente.<br>Click no link abaixo para redefinir sua senha.<br><br>Acesse o Link Para Redefinir a Sua Senha: <a href=\"{%endereco%}/redefinir-minha-senha?key={%hash%}\">{%endereco%}{{redefinir-minha-senha.myLink}}?key={%hash%}</a>"
+  },
+  "assuntos":{
+    "cadastro":"Obrigado Por Se Cadastrar",
+    "altPassword":"Senha Alterada",
+    "esqueciMinhaSenha":"Recuperação de Senha",
+  }
+}

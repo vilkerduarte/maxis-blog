@@ -1,0 +1,19 @@
+{
+  "loading":"Carregando...",
+  "selectLocale":"Selecione Este Idioma",
+  "messages":{
+    "esqueciMinhaSenha":"Você receberá um email com as instruções para redefinir sua senha!",
+    "success":"Sucesso!",
+    "error":"Erro!",
+    "msg_success":"Operação realizada com sucesso!",
+    "msg_error":"Ops, não foi possível realizar esta operação.<br>Verifique os campos e tente novamente.",
+    "sorry":"Ops! Lamentamos por isso.",
+    "ops":"Ops!",
+    "pageNotFound":"Página Não Encontrada"
+  },
+  "admin":"Admin",
+  "normal":"Normal",
+  "labelAdmin":"Admin",
+  "labelNormal":"Normal",
+  "no-regs":"Nenhum Registro Encontrado"
+}

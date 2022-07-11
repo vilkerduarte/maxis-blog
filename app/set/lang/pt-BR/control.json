@@ -1,0 +1,9 @@
+{
+  "DIR":{
+    "dashboard":"painel-de-controle",
+    "cadastro":"cadastrar",
+    "not-found":"nao-encontrado",
+    "login":"entrar",
+    "meus-dados":"minha-conta"
+  }
+}

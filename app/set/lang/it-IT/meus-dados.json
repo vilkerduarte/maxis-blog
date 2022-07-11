@@ -1,0 +1,8 @@
+{
+  "pageTitle":"Il Mio Account",
+  "myLink":"/il-mio-account",
+  "messages":{
+    "dadosAlterados":"Dati modificati con successo!"
+  },
+  "btnLabel":"Modificare"
+}

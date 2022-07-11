@@ -1,0 +1,40 @@
+<div class="container my-5">
+	<div class="row w-100">
+		<!--#CABECALHO#-->
+		<h1 class="col-12 text-center family-title-master font-28">{{instalar.title}}</h1>
+		<form class="row w-100  pt-3 pb-3" onSubmit="carregar()" action="" method="post">
+			<div class="col-3">&nbsp;</div>
+			<div class="col-6 border border-radius-4px p-1">
+				<div class="w-100 form___">
+					<input type="hidden" name="token" value="{%token%}">
+					<label>{{instalar.host}}</label>
+					<input type="text" name="DBhost" value="localhost" class="mb-1" required>
+					<label>{{instalar.user}}</label>
+					<input type="text" name="DBuser" value="root" class="mb-1" required>
+					<label>{{instalar.pass}}</label>
+					<input type="text" name="DBpass" value="" class="mb-1">
+					<label>{{instalar.DB}}</label>
+					<input type="text" name="DBname" value="" placeholder="myDB" class="mb-1" required>
+				</div>
+				<div class="text-center p-3 w-100 formAlt">
+					<button>{{instalar.btnLabel}}</button>
+				</div>
+			</div>
+			<div class="col-3">&nbsp;</div>
+		</form>
+	</div>
+<script>
+function carregar(){
+	$('#loader').fadeIn();
+	$('#loader-label').text('{{instalar.status.first}}');
+	setTimeout(function(){
+		$('#loader-label').text('{{instalar.status.second}}');
+		setTimeout(function(){
+			$('#loader-label').text('{{instalar.status.third}}');
+		},3000);
+	},4000);
+}
+</script>
+	<!--#SECTIONS#-->
+</div>
+<!--#RODAPE#-->

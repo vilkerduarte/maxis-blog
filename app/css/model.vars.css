@@ -1,0 +1,20 @@
+:root{
+	--color_1:{%colors>color_1%};
+	--color_2:{%colors>color_2%};
+	--color_3:{%colors>color_3%};
+	--color_4:{%colors>color_4%};
+	--color_5:{%colors>color_5%};
+	--header_height:{%layout>header>height%};
+	--header_background:{%layout>header>background%};
+	--header_padding:{%layout>header>padding%};
+	--body_max-width:{%layout>body>maxWidth%};
+	--body_font-size:{%layout>body>fontSize%};
+	--body_font-family:{%layout>body>fontFamily%};
+	--body_background:{%layout>body>background%};
+	--body_color:{%layout>body>color%};
+	--body_padding:{%layout>body>padding%};
+	--menu_background:{%layout>menu>background%};
+	--menu_color:{%layout>menu>color%};
+	--menu_logo:{%layout>header>side_logo%};
+	--title-master:{%layout>body>fontFamilyTitleMaster%};
+}

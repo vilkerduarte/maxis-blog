@@ -1,0 +1,24 @@
+var menus = {
+  "div.row.w-100.item-agenda": new MenuClickRight([
+    MenuClickRight.createItem('Remarcar','#',function(e){
+      page_modal('remarcar/'+e.hash);
+    }),
+    MenuClickRight.createItem('Ver Histórico','#',function(e){
+      page_modal('historico/'+e.hash);
+    }),
+    MenuClickRight.createGroup('Marcar Como',[
+      MenuClickRight.createItem('Cancelado','#',function(e){
+      }),
+      MenuClickRight.createItem('Atendido','#',function(e){
+      })
+    ]),
+    MenuClickRight.createItem('Excluir','#',function(e){
+      // $.post('/action/excluir-item-da-agenda/',{item:e.hash},function(){ searchAgenda(); })
+    })
+  ]),
+  "div.row.w-100.item-agenda.empty": new MenuClickRight([
+    MenuClickRight.createItem('Marcar','#',function(e){
+      page_modal('marcar-consulta?data='+e.date+'&hora='+e.hora);
+    })
+  ])
+}

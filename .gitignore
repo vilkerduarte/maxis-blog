@@ -1,0 +1,5 @@
+.DS_Store
+backup/
+**/desktop.ini
+desktop.ini
+app/set/local.config.json
