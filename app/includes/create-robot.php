@@ -29,6 +29,12 @@ if($busca){
   $xml .= '
    </urlset>';
    file_put_contents(__DIR__."/../sitemap.xml",$xml);
+
+   $Robots = "User-agent: *
+   Allow: /
+
+   Sitemap: ".ENDERECO_SITE."/sitemap.xml";
+   file_put_contents(__DIR__."/../Robots.txt",$Robots);
 }
 erro(403);
 exit;
