@@ -31,9 +31,9 @@ if($busca){
    file_put_contents(__DIR__."/../sitemap.xml",$xml);
 
    $Robots = "User-agent: *
-   Allow: /
+Allow: /
 
-   Sitemap: ".ENDERECO_SITE."/sitemap.xml";
+Sitemap: ".ENDERECO_SITE."/sitemap.xml";
    file_put_contents(__DIR__."/../Robots.txt",$Robots);
 }
 erro(403);
