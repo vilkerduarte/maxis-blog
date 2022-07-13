@@ -6,4 +6,5 @@ app/set/local.config.json
 /.well-known
 /index.html
 /404.html
+/app/sitemap.xml
 .user.ini
