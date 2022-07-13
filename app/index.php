@@ -7,9 +7,15 @@
 ** -------------------------
 */
 
+
+
+
+
 @session_start();
 include_once(__DIR__."/set/config.php");
-
+if(_SYS_['DB'][0]['user'] == 'maxis_blog'){
+	header("Content-Security-Policy: default-src 'self'; img-src storage.7exp.us; media-src youtube.com;");
+}
 
 /* -----------------------------
 ========= Fingerprint ==========
