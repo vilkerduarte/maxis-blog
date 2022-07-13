@@ -17,7 +17,6 @@ $BODY['title-page'] = $busca[0]['title'];
 $BODY['global']['sys']['description'] = $busca[0]['description'];
 $BODY['extra-head'] .= "\n\n";
 
-$BODY['extra-head'] .= "\n".'<link rel="canonical" href="'.ENDERECO_SITE.'/post/'.$busca[0]['url'].'"/>';
 $BODY['extra-head'] .= "\n".'<meta property="og:locale" content="pt_BR"/>';
 $BODY['extra-head'] .= "\n".'<meta property="og:type" content="article"/>';
 $BODY['extra-head'] .= "\n".'<meta property="og:title" content="'.$busca[0]['title'].'"/>';

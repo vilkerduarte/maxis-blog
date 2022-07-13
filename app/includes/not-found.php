@@ -1,4 +1,5 @@
 <?php
+$BODY['extra-head'] .= "\n".'<link rel="canonical" href="'.ENDERECO_SITE.'/not-found"/>';
 $BODY['top'] = renderView('widgets/cabecalho',[
   "logo"=>$sys['url_storage'].($sys['layout']['header']['logo'] == 'white' ? $sys['logo_white'] : $sys['logo'])
 ]);
