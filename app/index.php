@@ -14,7 +14,10 @@
 @session_start();
 include_once(__DIR__."/set/config.php");
 if(_SYS_['DB'][0]['user'] == 'maxis_blog'){
-	header("Content-Security-Policy: default-src 'self'; img-src storage.7exp.us; media-src youtube.com;");
+	$CSP = "Content-Security-Policy: ";
+	$CSP .= "default-src 'self' *.googleapis.com googleapis.com *.7exp.us;";
+	header($CSP);
+	// header("Content-Security-Policy: default-src 'self'; img-src storage.7exp.us; media-src youtube.com;");
 }
 
 /* -----------------------------
