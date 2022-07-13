@@ -15,7 +15,7 @@
 include_once(__DIR__."/set/config.php");
 if(_SYS_['DB'][0]['user'] == 'maxis_blog'){
 	$CSP = "Content-Security-Policy: ";
-	$CSP .= "default-src 'self' 'unsafe-inline' *.gstatic.com *.googleapis.com googleapis.com *.7exp.us; ";
+	$CSP .= "default-src 'self' 'unsafe-inline' *.twitter.com *.gstatic.com *.googleapis.com googleapis.com *.7exp.us; ";
 	header($CSP);
 	// header("Content-Security-Policy: default-src 'self'; img-src storage.7exp.us; media-src youtube.com;");
 }
